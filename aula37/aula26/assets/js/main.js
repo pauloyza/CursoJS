@@ -1,6 +1,7 @@
 // Capturar evento de submit do formulário
 
 const clock = document.querySelector('.clock')
+const clockJunior = document.querySelector('.clockJunior')
 const begin = document.querySelector('.begin')
 const stop = document.querySelector('.stop')
 const zero = document.querySelector('.zero')
@@ -9,24 +10,27 @@ let clockAux = new Date('2001-01-01 00:00:00')
 let clockResset = new Date(clockAux)//clockAux
 function getClockNow(clockAux)
 {
+  let clockNow = clockAux.toLocaleTimeString('pt-BR',{
+    hour12: false,
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
 
+  })
 
-
-let clockNow = clockAux.toLocaleTimeString('pt-BR',{
-  hour12: false,
-  hour: '2-digit',
-  minute: '2-digit',
-  second: '2-digit'
-
-})
-return clockNow
+  return clockNow
 }
+
 // console.log(clockNow)
 console.log(clock.innerHTML)
+console.log(clockJunior.innerHTML)
+
 let cronometro
 begin.addEventListener('click', function(e)
 {
   clock.style.color = 'black'
+  clockJunior.style.color = 'black'
+
   cronometro = setInterval(
     function()
     {
