@@ -1,5 +1,5 @@
 // Construtora -> Pessoa (new)
-
+// Nao precisa de return
 function Pessoa(nome, sobrenome)
 {
     //private
